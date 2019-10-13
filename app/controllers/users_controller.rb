@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user,only: [:show,:edit,:update,:destroy]
+  before_action :check_user,only: [:edit,:update,:destroy]
   def new
     @user = User.new
   end
@@ -16,11 +18,34 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to blogs_path,notice:"ユーザー情報を編集しました！"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to new_user_path, notice:"アカウントを削除しました！"
+  end
+
+  def check_user
+
+  end
 
   private
 
   def user_params
     params.require(:user).permit(:icon,:name, :email, :password,
                                  :password_confirmation,:image_cache)
+  end
+
+  def set_user
+      @user = User.find(params[:id])
   end
 end

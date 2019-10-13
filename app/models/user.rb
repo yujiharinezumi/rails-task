@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  has_many :blogs
+  has_many :blogs, dependent: :destroy
+
+
    mount_uploader :icon, ImageUploader
   validates :icon, presence: true
   validates :name, presence: true, length: { maximum: 30 }
