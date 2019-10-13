@@ -6,19 +6,20 @@ class UsersController < ApplicationController
   end
 
   def create
-   @user = User.new(user_params)
-   if @user.save
-     redirect_to user_path(@user.id)
-   else
-      render 'new'
-    end
- end
+    @user = User.new(user_params)
+     if @user.save
+       redirect_to user_path(@user.id)
+     else
+       render 'new'
+     end
+  end
 
   def show
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
   end
 
   def edit
+
   end
 
   def update
@@ -35,17 +36,20 @@ class UsersController < ApplicationController
   end
 
   def check_user
-
+      if @user.id != current_user.id
+        redirect_to blogs_path,notice:"権限がありません"
+      end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:icon,:name, :email, :password,
-                                 :password_confirmation,:image_cache)
+    params.require(:user).permit(:icon,:name,:email,:password,:password_confirmation)
   end
 
   def set_user
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
+
+
 end

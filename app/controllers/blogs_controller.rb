@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update,:destroy]
+  before_action :check_user, only:[:edit,:update,:destroy]
 
   def index
     @blogs = Blog.all
@@ -47,6 +48,12 @@ class BlogsController < ApplicationController
   def confirm
     @blog = current_user.blogs.build(blog_params)
     render :new if @blog.invalid?
+  end
+
+  def check_user
+    if @blog.user.id != current_user.id
+      redirect_to blogs_path,notice:"権限がありません"
+    end
   end
 
   private
