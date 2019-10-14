@@ -11,21 +11,27 @@
 
 
 <%= form_with(model: @user, local: true) do |f| %>
-
-<%= f.label :icon %>
-<%= f.file_field :icon %>
-
+<div class="box">
+  <%= f.label :icon %>
+  <%= f.file_field :icon %>
+</div>
+<div class="box">
   <%= f.label :name %>
   <%= f.text_field :name %>
-
+</div>
+<div class="box">
   <%= f.label :email %>
   <%= f.email_field :email %>
-
+</div>
+<div class="box">
   <%= f.label :password %>
   <%= f.password_field :password %>
-
+</div>
+<div class="box">
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
-
-  <%= f.submit "Create my account" %>
+</div>
+<div class="box">
+  <%= f.submit "Create my account",class:"btn btn-info" %>
+</div>
 <% end %>

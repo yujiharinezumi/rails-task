@@ -1,6 +1,7 @@
+<div>
 <% @blogs.each do |blog| %>
-<div class="row">
-<div class="card col-md-3 " style="width: 26rem;">
+<div class="row" style="width; ">
+<div class="card mx-auto" style="width: 26rem;">
   <%= image_tag blog.image.url %>
   <div class="center">
     <p><i class="far fa-user"></i> <%= blog.user.name %></p>
@@ -11,8 +12,7 @@
     <% end %>
 
   <% if blog.user.id == current_user.id %>
-  <%= link_to  edit_blog_path(blog.id) do %>
-
+    <%= link_to  edit_blog_path(blog.id) do %>
     <i class="far fa-edit"></i>
   <% end %>
 
@@ -24,3 +24,4 @@
   </div>
   </div>
     <% end %>
+</div>
