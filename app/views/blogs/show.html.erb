@@ -1,12 +1,13 @@
 <h1>About Post</h1>
+
+<%= image_tag @blog.image.url%></p>
 <p>content: <%= @blog.content %></p>
-<p>image: <%= image_tag @blog.image.url%></p>
 
 <% unless @blog.user_id == current_user.id %>
   <% if @favorite.present? %>
-    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete%>
+    <i class="fas fa-heartbeat"></i><%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete%>
   <% else %>
-    <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post %>
+    <i class="far fa-heart"></i><%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post %>
   <% end %>
 <% end %>
 

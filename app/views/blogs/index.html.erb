@@ -1,31 +1,26 @@
-<h1>ブログ一覧</h1>
-
-<p><%= notice %></p>
-
-
-<table>
-  <tr>
-    <th>名前</th>
-    <th>画像</th>
-    <th>内容</th>
-  </tr>
-
 <% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.user.name %></td>
-    <td><%= image_tag blog.image.url %></td>
-    <td><%= blog.content %></td>
+<div class="row">
+<div class="card col-md-3 " style="width: 26rem;">
+  <%= image_tag blog.image.url %>
+  <div class="center">
+    <p><i class="far fa-user"></i> <%= blog.user.name %></p>
+    <p><i class="far fa-file-alt"></i> <%= blog.content %></p>
 
-     <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
-     <% if blog.user.id == current_user.id %>
-      <td><%= link_to "ブログを編集する", edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' } %></td>
-      <td><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete %></td>
+    <%= link_to blog_path(blog.id) do %>
+      <i class="far fa-check-square"></i>
     <% end %>
-    </tr>
+
+  <% if blog.user.id == current_user.id %>
+  <%= link_to  edit_blog_path(blog.id) do %>
+
+    <i class="far fa-edit"></i>
+  <% end %>
+
+  <%= link_to blog_path(blog.id), method: :delete do %>
+    <i class="far fa-trash-alt"></i>
+  <% end %>
+ <% end %>
+    </div>
+  </div>
+  </div>
     <% end %>
-</table>
-
-
-<%= link_to '新しくブログを投稿する', new_blog_path %>
-
-<%= link_to 'お気に入り一覧', favorites_path %>
