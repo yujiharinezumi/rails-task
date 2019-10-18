@@ -3,7 +3,7 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-*Check it out live on Heroku:  heroku:lit-castle-19989.herokuapp.com/
+*Check it out live on Heroku:  <heroku:lit-castle-19989.herokuapp.com>
 
 Things you may want to cover:
 
