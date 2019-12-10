@@ -12,7 +12,7 @@ set :repo_url, 'https://github.com/yujiharinezumi/rails-kadai-second'
 set :branch, ENV['BRANCH'] || 'master'
 
 # deploy先のディレクトリ。
-set :deploy_to, '/var/www/achiev  e'
+set :deploy_to, '/var/www/rails-kadai2'
 
 # シンボリックリンクをはるフォルダ・ファイル
 set :linked_files, %w{.env config/secrets.yml}

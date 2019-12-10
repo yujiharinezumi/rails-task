@@ -30,7 +30,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'dotenv-rails'
 
-   gem 'capistrano', '3.6.0' 
+   gem 'capistrano', '3.6.0'
    gem 'capistrano-bundler'
    gem 'capistrano-rails'
    gem 'capistrano-rbenv'
@@ -45,7 +45,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-   gem 'letter_opener_web'
+  gem 'letter_opener_web'
+
+  gem 'bcrypt_pbkdf'
+  gem 'ed25519'
 end
 
 group :test do
@@ -62,6 +65,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'bcrypt', '3.1.11'
+
 
 gem 'font-awesome-sass', '~> 5.4.1'
 
