@@ -58,3 +58,6 @@ gem 'mini_magick'
 gem 'bcrypt', '3.1.11'
 
 gem 'font-awesome-sass', '~> 5.4.1'
+
+gem 'fog-aws'
+gem 'dotenv-rails'
