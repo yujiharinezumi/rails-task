@@ -29,6 +29,12 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'dotenv-rails'
+
+   gem 'capistrano', '3.6.0' 
+   gem 'capistrano-bundler'
+   gem 'capistrano-rails'
+   gem 'capistrano-rbenv'
+   gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -61,3 +67,6 @@ gem 'font-awesome-sass', '~> 5.4.1'
 
 gem 'fog-aws'
 gem 'dotenv-rails'
+
+gem 'unicorn'
+gem 'mini_racer', platforms: :ruby
