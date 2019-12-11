@@ -21,7 +21,7 @@ when 'production'
     config.fog_directory =  'practice-production'
     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/practice-production'
    when 'development'
-     config.fog_directory = 'practice-production'
-     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/practice-production'
+     config.fog_directory = 'practice-develop'
+     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/practice-develop'
  end
 end
