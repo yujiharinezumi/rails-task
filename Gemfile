@@ -21,6 +21,24 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# 画像系
+gem 'carrierwave'
+gem 'mini_magick'
+
+gem 'bcrypt', '3.1.11'
+
+gem 'font-awesome-sass', '~> 5.4.1'
+
+gem 'fog-aws'
+gem 'dotenv-rails'
+
+gem 'unicorn', "~> 5.4"
+gem 'mini_racer', platforms: :ruby
+
+# gem 'sassc-rails'
+
 group :development, :test do
 
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -58,21 +76,3 @@ group :test do
 
   gem 'chromedriver-helper'
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'carrierwave'
-gem 'mini_magick'
-
-gem 'bcrypt', '3.1.11'
-
-
-gem 'font-awesome-sass', '~> 5.4.1'
-
-gem 'fog-aws'
-gem 'dotenv-rails'
-
-gem 'unicorn', "~> 5.4"
-gem 'mini_racer', platforms: :ruby
-
-gem 'sassc-rails'
