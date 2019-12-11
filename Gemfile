@@ -72,5 +72,7 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'fog-aws'
 gem 'dotenv-rails'
 
-gem 'unicorn'
+gem 'unicorn', "~> 5.4"
 gem 'mini_racer', platforms: :ruby
+
+gem 'sassc-rails'
